@@ -1,0 +1,62 @@
+
+
+
+Ref : http://crockford.com/
+
+--------------------------------------------------------------------
+
+ >js-into
+
+    - client-side lang on browser-envi
+    +
+    - server-side lang on Node.js
+
+--------------------------------------------------------------------
+> js-features
+
+   - dynamic
+   - FP + OOP
+
+   - IO operations are non-blocking 
+   - single-threaded process
+
+--------------------------------------------------------------------   
+
+> ECMAScript comminity
+
+    -> official comminity defines spec for javascript lang
+
+    latest spec : ES7
+
+-------------------------------------------------------------------- 
+
+How to run .js program?
+
+    ==> using .js-runtime /engine
+
+browser-envi
+
+    - chrome  ( v8 => c++) 
+    - firefox ( rhino/spider => java)
+    - IE/Edge ( chakra )
+    - Safari  ( Nitro )
+    ... 
+
+otner envi
+
+    - Node.js ( v8 )
+    - JVM     ( nashorn )
+    - ...   
+
+-------------------------------------------------------------------- 
+
+"Hello World"
+
+-------------------------------------------------------------------- 
+
+
+JS core-topics
+---------------
+
+ 1. data-types
+
