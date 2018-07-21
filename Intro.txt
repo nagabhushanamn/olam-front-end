@@ -59,4 +59,5 @@ JS core-topics
 ---------------
 
  1. data-types
+ 2. scopes / execution-contex
 
