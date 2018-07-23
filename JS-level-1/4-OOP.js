@@ -107,6 +107,17 @@ let p2 = new Person('Kishore', 34); */
 
 // ES6 - class ( New OO syntax )
 
+
+/*
+
+    2 types of behav
+
+    - class-level/static level methods
+    - instance level methods
+
+
+*/
+
 class Person {
     constructor(name, age) {
         this.name = name;
@@ -124,6 +135,7 @@ class Person {
 
 let p1 = new Person('person-1', 35);
 // let p2 = new Person('Kishore', 34);
+
 
 class Employee extends Person {
     constructor(name, age, salary) {
@@ -148,20 +160,20 @@ class Boss extends Employee {
 }
 
 let boss = new Boss('boss-1', 35, 1000.00);
-
-
 class Abc {
     static staMethod() {
         console.log('stat Method on Abc')
+        // console.log(this);
     }
 }
 Abc.staVar = 123;
 
 class Xyz extends Abc {
-    static staMethod() {
-        console.log('stat Method on Xyz')
-    }
+    // static staMethod() {
+    //     console.log('stat Method on Xyz')
+    // }
 }
 
-Abc.staMethod();
-Xyz.staMethod();
+// Abc.staMethod();
+// Xyz.staMethod();
+
