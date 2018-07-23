@@ -55,9 +55,47 @@ otner envi
 -------------------------------------------------------------------- 
 
 
-JS core-topics
+----------------------------------------------------
+JS core-topics  ( level-1 )
 ---------------
 
  1. data-types
  2. scopes / execution-contex
+ 3. FP
+ 4. OOP
 
+ ----------------------------------------------------
+
+ level-2  ( New syntax & APIs introduced in ES6 & ES7 )
+
+
+  1. New syntax  ( in ES6 )
+
+        ----------------------------------------------------
+
+        - let & const keywords with block-scope
+        - function with default & rest params
+        - string interpolation  i.e ``
+        - New way of OOP with 'class' syntax 
+        - de-structuring
+        - spread operator
+        - obj-literal enhancements
+
+        - symbols
+        - iterators & generators
+        - arrow-function
+        - collections ( set & map )
+        - New Apis 
+
+        - JS modules
+
+        ----------------------------------------------------
+        TypeScript
+        -----------------------------------------------------
+
+
+        - Concurrency Model & Non Blocking
+        - Promise APIs 
+
+        ----------------------------------------------
+        
