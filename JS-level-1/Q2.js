@@ -48,6 +48,7 @@ class TodoService {
         todo.completed = !todo.completed;
     }
     completeAll() {
+
         let isAllCompleted = this.todos.every(function (item) {
             return item.completed;
         });
@@ -71,6 +72,38 @@ class TodoService {
         this.todos.forEach(function (item) {
             console.log(item);
         });
+    }
+}
+
+//------------------------------------------------------
+
+
+class TodoService_v2 {
+    constructor() {
+        this.todos = [];
+    }
+    addTodo(title) {
+        this.todos = [...this.todos, new Todo(title)];
+    }
+    editTodo(id, newTitle) {
+        this.todos = this.todos.map(todo => todo.id === id ? Object.assign({}, todo, { title: newTitle }) : todo)
+    }
+    completeTodo(id) {
+        this.todos = this.todos.map(todo => todo.id === id ? Object.assign({}, todo, { completed: !todo.completed }) : todo)
+    }
+    completeAll() {
+        let isAllCompleted = this.todos.every((todo) => todo.completed);
+        this.todos = this.todos.map(todo => Object.assign({}, todo, { completed: !isAllCompleted }));
+    }
+    deleteTodo(id) {
+        let idx = this.todos.filter((todo) => todo.id !== id)
+    }
+    clearCompeleted() {
+        this.todos = this.todos.filter((item) => !item.completed);
+    }
+    viewTodos(filter) {
+        // filter ==> ALL, ACTIVE , COMPLETED
+        this.todos.forEach((item) => console.log(item));
     }
 }
 
