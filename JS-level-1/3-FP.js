@@ -372,4 +372,67 @@ newF(); */
 
 //---------------------------------------------------------------------
 
-// Closures
+
+
+// closures    
+/*
+    A closure is a function having access to the parent scope,
+    even after the parent function has closed.
+*/
+
+function teach(sub) {
+    console.log('teaching ' + sub);
+    let notes = sub + '-notes'
+    let fun = "fun-talk";
+    function learn() {
+        console.log('learning ..with ' + notes);
+    }
+    //learn();
+    console.log('teaching ends..');
+    return learn;
+}
+
+
+/* let learn = teach('.js');  // teach-scope
+learn();
+learn();
+learn();
+ */
+
+
+
+
+/*
+
+    // why / where we need closures ?
+
+    1. to abstract public-behav
+*/
+// 1. to abstract public-behav keeping other members as private
+/*
+    e.g counter module
+
+        - count
+        - doCount()
+        - getCount()
+*/
+function init() {
+    let count = 0;  // private
+    // public
+    function internal() { };
+    function doCount() {
+        count++;
+    }
+    function getCount() {
+        return count;
+    }
+    return {
+        doCount: doCount,
+        getCount: getCount,
+        f:function(){}
+    }
+}
+const counter = init();
+//---------------------------------------------------------------------
+
+
