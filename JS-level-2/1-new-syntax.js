@@ -1,4 +1,4 @@
-
+"use strict"
 
 console.log('-new-syntax.js-');
 
@@ -114,6 +114,7 @@ let pName = "Nag";
 let pAge = 35;
 
 // es-5
+
 let person = {
     pName: pName,
     pAge: pAge,
@@ -121,6 +122,7 @@ let person = {
 }
 
 // es6
+
 let pAddressType = 'office' // hoem | office | vacation | onsite
 let newPerson = {
     pName,
@@ -137,7 +139,6 @@ let newPerson = {
 
 
 //e.g
-
 
 // let cart = {};
 
@@ -176,8 +177,8 @@ console.dir(cart)
  */
 
 
-//----------------------------------------------------------
 
+// another ex
 
 // before ES6
 
@@ -193,3 +194,257 @@ let txnResponse = { id: 35234234, message: 'success' } //response from server
 let newTxn = {
     [txnResponse.id]: txnResponse.message
 };
+
+
+//----------------------------------------------------------
+// - arrow function
+//----------------------------------------------------------
+
+// let getPrice = function () {
+//     return 100 + 200;
+// };
+
+// or
+
+
+/* let getPrice = () => {
+    return 100 + 200;
+};
+ */
+
+/* let getPrice = (count) => {
+    return count * (100 + 200);
+}; */
+// or
+/* let getPrice = count => {
+    return count * (100 + 200);
+}; */
+
+/* let getPrice = (count, tax) => {
+    return count * (100 + 200) + tax;
+}; */
+// or
+// let getPrice = (count, tax) => count * (100 + 200) + tax;
+
+
+/* let getPrice = (count, tax) => {
+    let cost = count * (100 + 200);
+    let total = cost + tax;
+    return total
+}; */
+
+//-------------------------------------------------------
+
+// why / where we need arrow-function?
+/*
+    => to make compact function-arg
+    => to capture 'this'
+*/
+
+//-------------------------------------------------------
+
+// => to make compact function-arg
+
+let nums = [1, 3, 5, 7, 9, 2, 4, 6, 8, 10];
+// nums.sort();
+// nums.sort(function (a, b) { return a - b; });
+// or
+// nums.sort((a, b) => { return a - b; });
+// or
+nums.sort((a, b) => a - b); // concise cose
+// nums.forEach(n => console.log(n))
+
+//-------------------------------------------------------
+
+/* remember-noet : 
+
+ => by default global-scope always executed by 'global-object'
+
+    global-object
+
+    browser-envi ==> window
+    node.js      ==> process
+
+*/
+
+
+// => to capture 'this'
+
+/*
+
+    imp-note :
+
+     ==> arrow-function always bound to creator/owner
+     ==> we cannot bind arrow-functions to any object either statically or dynamically
+
+*/
+/* 
+let normalFunc = function () {
+    console.log(this);
+};
+let arrowFunc = () => {
+    console.log(this);
+};
+
+// normalFunc();
+// arrowFunc();
+
+let o1 = { name: 'A' }
+normalFunc.call(o1);
+arrowFunc.call(o1); */
+
+
+
+// e.g
+
+
+let trainer = {
+    name: 'Nag',
+    doTeach: function () {
+        console.log(this.name + " teaching .js");
+
+        /* let self = this;
+        let askQues = function (q) {
+            console.log(self.name + " answering " + q);
+        }
+        */
+
+        // or
+
+        let askQues = (q) => {
+            console.log(this.name + " answering " + q);
+        }
+
+
+        console.log('teaching ends..');
+        return askQues;
+    },
+    // askQues:function(){
+    //...
+    // }
+};
+
+/* // today
+let nagAskQues = trainer.doTeach();
+nagAskQues('Q1');
+nagAskQues('Q2');
+
+//tomorrow
+let tempTrainer = { name: 'Kishore' }
+let kiAskQues = trainer.doTeach.call(tempTrainer);
+kiAskQues('Q3');
+
+nagAskQues.call(tempTrainer,"Q4"); // 
+ */
+
+//-----------------------------------------------------
+
+
+
+// e.g
+
+//-----------------------------------------------------
+/* let invoice = {
+    num: 123,
+    process: function () {
+        console.log('INV-' + this.num + " processed..");
+    }
+}; */
+//-----------------------------------------------------
+// or
+//-----------------------------------------------------
+// let normalFunc = function () {
+//     console.log('INV-' + this.num + " processed..");
+// };
+// let invoice = {
+//     num: 123,
+//     process: normalFunc
+// };
+//-----------------------------------------------------
+
+// let invoice = {
+//     num: 123,
+//     process: ()=>{
+//         console.log('INV-' + this.num + " processed..");
+//     }
+// };
+//-----------------------------------------------------
+// or
+//-----------------------------------------------------
+/* let arrowFunc = () => {
+    console.log('INV-' + this.num + " processed..");
+};
+let invoice = {
+    num: 123,
+    process: arrowFunc
+}; */
+//-----------------------------------------------------
+/* let invoice = {
+    num: 123,
+    process: function () {
+        console.log('INV-' + this.num + " processed partialy");
+        let normalFunc = function () {
+            console.log('INV-' + this.num + " processed completly");
+        }
+        return normalFunc;
+    }
+};
+ */
+//-----------------------------------------------------
+/* let invoice = {
+    num: 123,
+    process: function () {
+        console.log('INV-' + this.num + " processed partialy");
+        let self=this;
+        let normalFunc = function () {
+            console.log('INV-' + self.num + " processed completly");
+        }
+        return normalFunc;
+    }
+}; */
+//-----------------------------------------------------
+/* let invoice = {
+    num: 123,
+    process: function () {
+        console.log('INV-' + this.num + " processed partialy");
+        let arrowFunc = () => {
+            console.log('INV-' + this.num + " processed completly");
+        }
+        return arrowFunc;
+    }
+};
+let completeFunc = invoice.process();
+// by admin
+completeFunc();
+let otherInvoice = { num: 321 };
+completeFunc.call(otherInvoice);
+ */
+
+
+//-----------------------------------------------------
+
+
+
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+
+        /* let self=this;
+        let incAge = function () {
+            self.age++;
+            console.log(self.name + ":" + self.age)
+        };
+        setInterval(incAge, 1000); */
+
+        // or
+        let incAge = () => {
+            this.age++;
+            console.log(this.name + ":" + this.age)
+        };
+        setInterval(incAge, 1000);
+
+    }
+}
+
+let p1 = new Person('Ria', 3);

@@ -65,37 +65,29 @@ JS core-topics  ( level-1 )
  4. OOP
 
  ----------------------------------------------------
-
  level-2  ( New syntax & APIs introduced in ES6 & ES7 )
-
+----------------------------------------------------
 
   1. New syntax  ( in ES6 )
 
-        ----------------------------------------------------
+    - let & const keywords with block-scope
+    - function with default & rest params
+    - string interpolation  i.e ``
+    - New way of OOP with 'class' syntax 
+    - de-structuring
+    - spread operator
+    - obj-literal enhancements
+    - arrow-function
+    
+    - symbols
+    - iterators & generators
+    
+    - collections ( set & map )
 
-        - let & const keywords with block-scope
-        - function with default & rest params
-        - string interpolation  i.e ``
-        - New way of OOP with 'class' syntax 
-        - de-structuring
-        - spread operator
-        - obj-literal enhancements
+    - New Apis 
+    - JS modules
+    - Concurrency Model & Non Blocking
+    - Promise APIs 
 
-        - symbols
-        - iterators & generators
-        - arrow-function
-        - collections ( set & map )
-        - New Apis 
-
-        - JS modules
-
-        ----------------------------------------------------
-        TypeScript
-        -----------------------------------------------------
-
-
-        - Concurrency Model & Non Blocking
-        - Promise APIs 
-
-        ----------------------------------------------
+----------------------------------------------
         
