@@ -119,10 +119,90 @@ JS core-topics  ( level-1 )
     -------------
     -> to communicate with server-side programs async
 
+    using HTML5 APIs
 
+
+   -----------------------------------------------------------------------------
+
+
+    plain-js with browser-apis : problems
+    -------------------------------------
+
+    -> browser compatability issues
+    -> memory issues shud take care manually ( i.e clean un-used DOM elements )
+    -> performance issues shud consider ( i.e minimal DOM access will give greater performance)
+    -> data-binding is manual  ( 50% of our work here only)
+    -> too much code even for simple operation
+    -> code oraganization is very difficult
+
+
+    past-soln : using server-side page-technologies
+
+        e.g JSP , ASP.NET , PHP , etc...
+
+    problems with server-side page techonologies
+
+    -> on every req, server-side programs shud re-generate same UI layout with new context , keeping client state     
+    -> on every resp, server will txr same resources again and again , increate n/w bandwidth
+    -> on every resp, browser re-load current page
     
 
+    best-soln :  using browser-side page technologies with third-party .js lib and F.Ws
 
 
+    some .js lib and F.Ws
+
+     1. jQuery
+
+          -> provides utility methods for DOM & XHR acroos browser
+
+     MVC / MVVM based .js lib & F.Ws
+
+     1. backbone.js / marionet.js 
+     2. knockout.js
+     3. angular.js   ==> google-team
+     4. ember.js
+     5. dojo
+     6. extjs
+     ..........
+
+     component based arctecture lib & F.W      
+
+     1. react.js
+     2. angular   ( our course )   ==> dynamic UI   + third-party UI comps ( kendo UI)
+     3. vue
+     4. polymer
+     ...
+
+     
+
+
+   -----------------------------------------------------------------------------
+
+
+    .js-development without module-standards  & module-loader
+
+    -> global-naming collisions
+        
+        soln : using self-executable function with single global
+
+    -> loading dependency modules in order is manual
+
+
+    soln :
+
+      from third-parties , we got some module-standards & loaders  
+
+        1- AMD ( Async Module Definition )
+        2- commonJS
+        3- UMD
+        ........
+
+
+    ---------------------------------------------------------
+
+    2- commonJS module-standard
+
+    
 
         

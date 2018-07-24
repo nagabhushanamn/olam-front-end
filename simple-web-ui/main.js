@@ -2,8 +2,9 @@ console.log('-im main.js-');
 //----------------------------------------------------------------------
 // using DOM API
 let greetBox = document.getElementById('greet-box');
-let greetBtns = document.getElementsByTagName('button');
-let [gmBtn, gnBtn, geBtn] = greetBtns;
+let gmBtn = document.getElementById('gm');
+let gnBtn = document.getElementById('gn');
+let geBtn = document.getElementById('ge');
 let changeMessage = e => {
     let id = e.target.id;
     switch (id) {
@@ -21,6 +22,10 @@ let changeMessage = e => {
 gmBtn.addEventListener('click', changeMessage)
 gnBtn.addEventListener('click', changeMessage)
 geBtn.addEventListener('click', changeMessage)
+//----------------------------------------------------------------------
+$('#ge-jq').click(e => {
+    $('#greet-box').text('good evening from jQeury');
+});
 //----------------------------------------------------------------------
 
 
@@ -57,7 +62,7 @@ let loadUsersBtn = document.getElementById('loadUsersBtn');
 let usersTable = document.getElementById('users-table');
 loadUsersBtn.addEventListener('click', e => {
     console.log('loading users..');
-    let apiUrl = "https://jsonplaceholder.typicode.com/users?_limit=2";
+    let apiUrl = "https://jsonplaceholder.typicode.com/users?_limit=200";
     let promise = fetch(apiUrl);
     promise
         .then(response => response.json())

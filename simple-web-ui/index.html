@@ -11,12 +11,17 @@
 </head>
 
 <body class="container">
+    
     <hr/>
     <h1>simple web-ui</h1>
     <hr/>
     <button id="loadUsersBtn" class="btn btn-dark">Load Users</button>
     <hr/>
-   
+    <select name="count">
+        <option>5</option>
+        <option>10</option>
+        <option>15</option>
+    </select>
     <div class="card">
         <div class="card-header">All Users</div>
         <div class="card-body">
@@ -36,11 +41,14 @@
     <button id="gm"> GM </button>
     <button id="gn"> GN </button>
     <button id="ge"> GE </button>
+    <button id="ge-jq"> GE with jq </button>
+    <button id="" onclick="document.getElementById('greet-box').style.display='none'"> Hide </button>
+    <button id="" onclick="document.getElementById('greet-box').style.display=''"> show </button>
     <hr/>
     <div id="greet-box" class="alert alert-info">
         welcome to olam
     </div>
-
+    <script src="./jquery-3.3.1.js"></script>
     <script src="./main.js"></script>
 </body>
 
