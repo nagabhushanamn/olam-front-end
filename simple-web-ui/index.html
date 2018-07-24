@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>index</title>
+    <!-- to include external style-sheet to HTML-doc -->
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+</head>
+
+<body class="container">
+    <hr/>
+    <h1>simple web-ui</h1>
+    <hr/>
+    <button id="loadUsersBtn" class="btn btn-dark">Load Users</button>
+    <hr/>
+   
+    <div class="card">
+        <div class="card-header">All Users</div>
+        <div class="card-body">
+            <table class="table table-bordered table-sm">
+                <tbody id="users-table">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <hr/>
+    <button id="startBtn" class="btn btn-primary">start</button>
+    <button id="stopBtn" class="btn btn-danger">stop</button>
+    <hr/>
+    <span id="time-span" class="badge badge-primary">Nil</span>
+    <hr/>
+    <button id="gm"> GM </button>
+    <button id="gn"> GN </button>
+    <button id="ge"> GE </button>
+    <hr/>
+    <div id="greet-box" class="alert alert-info">
+        welcome to olam
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>

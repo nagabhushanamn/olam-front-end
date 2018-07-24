@@ -81,13 +81,48 @@ JS core-topics  ( level-1 )
     
     - symbols
     - iterators & generators
-    
     - collections ( set & map )
-
     - New Apis 
     - JS modules
     - Concurrency Model & Non Blocking
     - Promise APIs 
 
 ----------------------------------------------
+
+
+ what .js-lang can do in HTML-page in browser-envi?
+
+    using browser provided APIs, 
+    .js-programs can bring any dynamic data/behav to web-page
+    
+    browser provided APIs, ==> w3c recommendations
+    all browser(s) impleted these APIs natively, and abstracted as .js objects & functions to us
+
+    browser APIs ==>  DOM,XHR,Timer,..
+
+    using DOM API
+    --------------
+    -> to create,retreive,update,delete HTML-element/tag/component
+    -> to change element's inner HTML/text content
+    -> to change element's style
+    -> to change element's properties/attributes
+    -> to listen event(s) on elements
+    -> to validate form-fields before submit
+    -> to create rich-UI components like auto-complete,date-picker,...
+    .........
+
+    using Timer API
+    -------------------
+    -> to execute any actions on time out/interval
+
+    using XHR API
+    -------------
+    -> to communicate with server-side programs async
+
+
+    
+
+
+
+
         
