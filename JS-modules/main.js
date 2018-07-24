@@ -1,4 +1,6 @@
 console.log('-main.js-');
 
-var olam = olam || {};
-olam.mod1.doWork();
+
+let greetMod=require('olam-greet')
+greetMod.greet('tn');
+greetMod.greet('en');

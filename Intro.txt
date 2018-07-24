@@ -200,9 +200,45 @@ JS core-topics  ( level-1 )
 
 
     ---------------------------------------------------------
+    commonJS module-standard
+    ---------------------------------------------------------
 
-    2- commonJS module-standard
 
-    
+    rules
+
+        --> every .js file is module by default
+        --> all var & functions in .js file are private by default
+        --> to abstract/export any members, use 'module.exports' object
+        --> to require/import any module , use 'require()' function
+        --> group related modules into package with description file ( package.json )
+
+        imp-note : Node.js runtime already implemented this as default module standard;
 
         
+  
+    ---------------------------------------------------------
+
+
+    NPM ( Node package Manager )  - tool
+
+        - cli tool
+        - runs on Node.js  , + part of Node.js runtime
+
+        why we need ?
+
+        ==> to publish/install .js-packages to/from NPM-repository
+        
+
+
+    ---------------------------------------------------------
+    ES module-standard  ( from Es6)
+    ---------------------------------------------------------
+
+
+    rules
+
+        --> every .js file is module by default
+        --> all var & functions in .js file are private by default
+        --> to abstract/export any members, use 'export' keyword
+        --> to require/import any module , use 'import' keyword
+        --> group related modules into package with description file ( package.json )
