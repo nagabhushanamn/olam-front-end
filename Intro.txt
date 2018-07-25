@@ -265,5 +265,4 @@ JS core-topics  ( level-1 )
      > npm i --save-dev webpack webpack-cli style-loader css-loader html-webpack-plugin
      > npm install webpack-dev-server --save-dev
      > create 'webpack.config.js' file on project directory
-
      > npm i --save bootstrap 
