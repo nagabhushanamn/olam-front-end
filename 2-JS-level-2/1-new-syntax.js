@@ -442,9 +442,144 @@ class Person {
             this.age++;
             console.log(this.name + ":" + this.age)
         };
-        setInterval(incAge, 1000);
+        //setInterval(incAge, 1000);
 
     }
 }
 
 let p1 = new Person('Ria', 3);
+
+
+//-----------------------------------------------------
+// symbols
+//-----------------------------------------------------
+
+/*
+
+    ==> unique & immutable value in .js-runtime
+
+    why we need ?
+
+    => used obj's identifier property
+
+*/
+/* 
+let frontEnd = Symbol.for('front-end')
+let backEnd = Symbol.for('back-end')
+
+let e1 = { name: 'A', [frontEnd]: 'html,css,js,ng,kendoui' };
+let e2 = { name: 'B', [backEnd]: 'java,spring,micro' };
+let e3 = { name: 'C' };
+let e4 = { name: 'D' };
+
+
+if(e1[frontEnd]){
+    console.log('he is front-end guy');
+}
+ */
+
+
+//-----------------------------------------------------
+// Iterable
+//-----------------------------------------------------
+/* 
+let menu = [
+    "item1",
+    "item2",
+    "item3",
+    "item4"
+];
+
+let [m1, m2, m3, m4] = menu;  // de-structuring
+let newMenu = [...menu, 'item-5']; // spreadable
+for (let m of menu) {   // works with iterable objects only
+    console.log(m);
+}
+ */
+
+
+let idMaker = {
+    [Symbol.iterator]: function () {
+        let id = 0;
+        return {
+            next: function () {
+                console.log('next()');
+                id++;
+                if (id <= 100)
+                    return { value: id, done: false }
+                else
+                    return { value: undefined, done: true }
+            }
+        };
+    }
+};
+
+// let ids = [...idMaker];
+// let [id1, , , , , , , id2, id3, id4, id5] = idMaker;
+// let [id6, id7, id8, id9, id10] = idMaker;
+/* for (let id of idMaker) {
+    console.log(id);
+} */
+
+
+//-----------------------------------------------------
+// Collection  / data-structures
+//-----------------------------------------------------
+
+let menu1 = [];
+menu1.push("biryani");
+menu1.push("biryani");
+menu1.push("meal");
+
+// Set  ==> data-structure holds unique elements
+
+let menu2 = new Set();
+menu2.add('biryani');
+menu2.add('biryani');
+menu2.add('meals');
+
+
+class Employee {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+
+let e1 = new Employee('Nag', 35);
+let e2 = new Employee('Nag', 35);
+
+let employeesSet = new Set();
+employeesSet.add(e1);
+employeesSet.add(e2);
+
+
+// Map  ( data-structure assoicative mapping  i.e key + value )
+
+let o = {
+    key1: 'value1',
+    key2: 'value2'
+};
+
+
+class Owner {
+    constructor(name) {
+        this.name = name;
+    }
+}
+class Car {
+    constructor(model, color) {
+        this.model = model
+        this.color = color
+    }
+}
+let ow1 = new Owner('Nag');
+let ow2 = new Owner('Ria');
+
+let car1 = new Car('BMW', 'black');
+let car2 = new Car('Toy-var', 'red');
+
+let map = new Map();
+map.set(ow1, car1);
+map.set(ow2, car2);
+console.log(map.get(ow1));

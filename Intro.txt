@@ -78,13 +78,13 @@ JS core-topics  ( level-1 )
     - spread operator
     - obj-literal enhancements
     - arrow-function
-    
     - symbols
     - iterators & generators
+    - for-of loop
     - collections ( set & map )
-    - New Apis 
     - JS modules
-    - Concurrency Model & Non Blocking
+    
+    - Concurrency Model & Non Blocking IO
     - Promise APIs 
 
 ----------------------------------------------
@@ -124,7 +124,6 @@ JS core-topics  ( level-1 )
 
    -----------------------------------------------------------------------------
 
-
     plain-js with browser-apis : problems
     -------------------------------------
 
@@ -134,7 +133,6 @@ JS core-topics  ( level-1 )
     -> data-binding is manual  ( 50% of our work here only)
     -> too much code even for simple operation
     -> code oraganization is very difficult
-
 
     past-soln : using server-side page-technologies
 
@@ -179,20 +177,16 @@ JS core-topics  ( level-1 )
 
    -----------------------------------------------------------------------------
 
-
     .js-development without module-standards  & module-loader
 
     -> global-naming collisions
-        
         soln : using self-executable function with single global
-
     -> loading dependency modules in order is manual
 
 
     soln :
 
       from third-parties , we got some module-standards & loaders  
-
         1- AMD ( Async Module Definition )
         2- commonJS
         3- UMD
@@ -203,9 +197,7 @@ JS core-topics  ( level-1 )
     commonJS module-standard
     ---------------------------------------------------------
 
-
     rules
-
         --> every .js file is module by default
         --> all var & functions in .js file are private by default
         --> to abstract/export any members, use 'module.exports' object
@@ -213,27 +205,21 @@ JS core-topics  ( level-1 )
         --> group related modules into package with description file ( package.json )
 
         imp-note : Node.js runtime already implemented this as default module standard;
-
-        
-  
     ---------------------------------------------------------
 
 
     NPM ( Node package Manager )  - tool
-
+        
         - cli tool
         - runs on Node.js  , + part of Node.js runtime
 
         why we need ?
-
         ==> to publish/install .js-packages to/from NPM-repository
-        
-
+        ==> to manage build life-cycle
 
     ---------------------------------------------------------
     ES module-standard  ( from Es6)
     ---------------------------------------------------------
-
 
     rules
 
@@ -242,3 +228,42 @@ JS core-topics  ( level-1 )
         --> to abstract/export any members, use 'export' keyword
         --> to require/import any module , use 'import' keyword
         --> group related modules into package with description file ( package.json )
+
+    ---------------------------------------------------------
+
+    while developing Front-End appliation,
+
+    Why Do We Need a Build?
+        
+        Combining Files
+        Minifying Files
+        Maintaining File Order
+        Transpilation
+        Linting
+  
+        how to build ?
+            => we need some automation tools
+
+            e.g
+
+                - grunt
+                - gulp
+                - brunch
+                ....
+
+                - webpack  ==> module bundler + loader for front-end application
+
+     ---------------------------------------------------------------
+
+
+     web-starter-kit 
+     ---------------
+
+     steps
+
+     > npm init
+     > npm i --save-dev webpack webpack-cli style-loader css-loader html-webpack-plugin
+     > npm install webpack-dev-server --save-dev
+     > create 'webpack.config.js' file on project directory
+
+     > npm i --save bootstrap 
