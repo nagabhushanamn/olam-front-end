@@ -266,3 +266,35 @@ JS core-topics  ( level-1 )
      > npm install webpack-dev-server --save-dev
      > create 'webpack.config.js' file on project directory
      > npm i --save bootstrap 
+
+
+     ------------------------------------------------------------------------
+
+
+     --------------------------------------------------
+     .js-lang
+
+        -> all IO operations are Non-Blocking
+        -> single-threaded process , but we can do concurrency
+
+      --------------------------------------------------  
+
+      browser e.g chrome
+
+      1. javascript runtime/engine ( v8 )        | ECMAScript spec |
+            - single-call-stack      ==> to execute functions
+            - heap                   ==> to hold objects
+      2. web apis ( dom, xhr, timer ,.. )         | w3c recommendations |
+      3. event-queue
+      4. event-loop   
+
+      --------------------------------------------------  
+
+      Ref:
+
+        https://developer.mozilla.org/bm/docs/Web/JavaScript/EventLoop
+        http://latentflip.com/loupe/?code=Cgo%3D!!!
+
+
+     --------------------------------------------------  
+     

@@ -3,7 +3,8 @@ const path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index.ts',
+  mode: 'development',
   output: {
     filename: 'app-bundle.js',
     path: path.resolve(__dirname, 'dist')
@@ -13,8 +14,16 @@ module.exports = {
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.ts$/,
+        use: 'ts-loader',
+        exclude: /node_modules/
       }
     ]
+  },
+  resolve: {
+    extensions: ['.ts', '.js']
   },
   plugins: [new HtmlWebpackPlugin({
     title: 'sample-app',
