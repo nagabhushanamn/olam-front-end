@@ -7,8 +7,16 @@
     </div>
     <div class="card-body">
       
+      <!--
       <my-action-button *ngFor="let n of nums" [value]="n" (hit)="incTotalCount($event)">
       </my-action-button>
+      -->
+
+      <my-action-button  [value]="10" (hit)="incTotalCount($event)">
+      </my-action-button>
+      <my-action-button  [value]="-10" (hit)="incTotalCount($event)">
+      </my-action-button>
+  
 
       <div style="clear: both;">
         <hr/>
