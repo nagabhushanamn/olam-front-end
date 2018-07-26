@@ -99,6 +99,14 @@ console.log('initial script');
 // IO
 setTimeout(function(){
     console.log('after timeout..');
-},5000);
+},2000);
 console.log('cont if any other work exist..'); 
+function longTraining(){
+    var i=0;
+    while(i<10){
+        console.log('long..');
+        i++;
+    }
+}
+longTraining();
 

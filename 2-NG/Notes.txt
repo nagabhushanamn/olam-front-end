@@ -1,0 +1,61 @@
+
+
+------------------------------------------------------------
+> ng new <project-name>
+> cd <project-name>
+
+> npm i bootstrap --save
+
+- import bootstrap css in 'styles.css'
+- update app.component.html file as you need
+
+> npm start (or) ng serve --open --port=8080
+
+
+------------------------------------------------------------
+NG - data-binding
+------------------------------------------------------------
+
+ 4 ways
+
+ 1. interpolation   ==> component's class -> component's template
+
+    syntax:   
+
+              {{expression}}   
+
+
+ 2. property binding ==> component's class -> component's template
+
+    syntax:
+              <element [prop]="expression" />  
+
+ 3. event binding    ==> component's template --> component's class
+
+    syntax:
+
+            <element (event-name)="handler()"/>
+
+------------------------------------------------------------
+NG - directives ==> they provide dynamic behav to template
+------------------------------------------------------------
+
+1. structural-directives
+
+    => to change template structure
+
+    e.g 
+    
+       *ngFor
+       *ngIf
+
+2. attribute-directives
+
+    => to change element attributes 
+
+    e.g ngClass      
+
+
+------------------------------------------------------------
+NG -  mult-components / inter-component communication
+------------------------------------------------------------

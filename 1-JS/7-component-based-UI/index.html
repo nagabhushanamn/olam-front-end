@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css" />
+</head>
+
+<body class="container">
+
+    <hr/>
+    <h1> component based UI</h1>
+    <hr/>
+
+    <div id="box1" class="alert alert-info">
+        <input id="inp1" onchange="changeHanler()" />
+        <hr/>
+        <span class="badge badge-primary">0</span>
+    </div>
+
+    <div id="box2" class="alert alert-danger">
+        <input id="inp2" />
+    </div>
+
+    <my-grid></my-grid>
+    <my-olam-logo></my-olam-logo>
+
+    <script>
+        let inp1 = document.getElementById('inp1');
+        let spanEle = document.getElementsByClassName('badge')[0];
+        let count = 0;
+        setInterval(() => {
+            count++;
+            inp1.value = count;
+            inp1.dispatchEvent(new Event('change'))
+        }, 1000);
+
+        function changeHanler() {
+            console.log('handling change on input element');
+            spanEle.innerText = count;
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>
