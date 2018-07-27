@@ -24,7 +24,6 @@ NG - data-binding
 
               {{expression}}   
 
-
  2. property binding ==> component's class -> component's template
 
     syntax:
@@ -58,4 +57,45 @@ NG - directives ==> they provide dynamic behav to template
 
 ------------------------------------------------------------
 NG -  mult-components / inter-component communication
+------------------------------------------------------------
+
+
+    - parent-component communicates with chils by 'input' propeties
+    - child-component communicates with parent by 'output' propeties by emitting events
+
+
+
+------------------------------------------------------------
+NG -  Form Management
+------------------------------------------------------------
+
+    how ?
+    
+    using 
+
+    - Reactive-Form Module  ( most advanced  approach )
+
+  steps:
+     step-1: import 'ReactiveFormsModule' to your angular-module
+     step-2: create form-group with form-controls in component's class
+     step-3: bind form-group & form-controls to relevant form & fields  in template
+
+     FormGroup :
+        ==> contains form's state & model
+
+        form-states
+
+            - pristine
+            - dirty
+
+            - invalid
+            - valid
+
+            - untouched
+            - touched
+
+        form-model
+
+            - formGroup.value   
+
 ------------------------------------------------------------

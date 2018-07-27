@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   totalCount: number = 100;
-  //nums: Array<number> = [1, 10, -1, -10, 100, -100, 50, -10,1, 10, -1, -10, 100, -100, 50, -10,1, 10, -1, -10, 100, -100, 50, -10,1, 10, -1, -10, 100, -100, 50, -10,1, 10, -1, -10, 100, -100, 50, -10];
+  nums: Array<number> = [1, 10, -1, -10];
 
   incTotalCount(event) {
     //this.totalCount += event.value;

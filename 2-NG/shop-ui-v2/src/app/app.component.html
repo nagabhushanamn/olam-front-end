@@ -1,0 +1,13 @@
+<div class="container">
+
+  <hr/>
+  <h1 [innerText]="title"></h1>
+  <hr/>
+
+  <div class="list-group">
+    <div *ngFor="let p of products|slice:0:150" class="list-group-item">
+      <app-product [value]="p"></app-product>
+    </div>
+  </div>
+
+</div>

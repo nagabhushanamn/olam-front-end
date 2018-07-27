@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-10 col-sm-10 col-md-10">
+    <div class="alert alert-info">
+      <i class="fa fa-star" 
+         *ngFor="let n of stars" 
+         [style.color]="review.stars<2?'red':'green'">
+      </i>&mdash;
+        {{review.author}}
+      <hr/>
+      <p>{{review.body}}</p>
+    </div>
+  </div>
+</div>

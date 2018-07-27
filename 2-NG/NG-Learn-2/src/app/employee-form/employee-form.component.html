@@ -1,0 +1,132 @@
+<div class="row"> 
+  <div class="col-6 col-sm-6 col-md-6">
+    <div class="card">
+      <div class="card-header">Employee Form</div>
+      <div class="card-body">
+        <form [formGroup]="employeeForm" (submit)="handleFormSubmit($event)">
+          <button type="button"
+                  class="btn btn-dark" 
+                  (click)="loadEmployee($event)">
+            Load
+          </button>
+          <hr/>
+          <div class="form-group">
+            <label>First Name:</label>
+            <input [ngClass]="{'is-invalid':employeeForm.get('firstName').invalid && employeeForm.get('firstName').touched}"
+                   class="form-control"
+                   formControlName="firstName" 
+                   (focus)="$event.target.select()"/>
+          </div>
+          <div class="form-group">
+            <label>Last Name:</label>
+            <input class="form-control" 
+                   formControlName="lastName" />
+          </div>
+          <div class="form-group">
+              <label>Age:</label>
+              <input class="form-control" 
+                     [ngClass]="{'is-invalid':employeeForm.get('age').invalid }"
+                     formControlName="age" 
+                     type="number"
+                     />
+              <span *ngIf="employeeForm.get('age').errors?.age">Invalid age limit</span>       
+          </div>
+          <div class="bg-light" style="padding: 5px;" formGroupName="emailGroup">
+            <div class="form-group">
+                <label>Email:</label>
+                <input class="form-control" 
+                      [ngClass]="{'is-invalid':employeeForm.get('emailGroup.email').invalid }"
+                      formControlName="email" />
+            </div>
+            <div class="form-group">
+                <label>Confirm Email:</label>
+                <input class="form-control"
+                      [ngClass]="{'is-invalid':employeeForm.get('emailGroup.cEmail').invalid }" 
+                      formControlName="cEmail" />
+            </div>
+            <span *ngIf="employeeForm.get('emailGroup').errors?.ematch && employeeForm.get('emailGroup.cEmail').touched">Emails dosent match</span>
+          </div>
+          <div class="form-group">
+              <label>Phone:</label>
+              <input class="form-control" 
+                     [ngClass]="{'is-invalid':employeeForm.get('phone').invalid }"
+                     formControlName="phone" />
+          </div>
+          <div class="form-group">
+              <label>Notification: &nbsp;</label>
+              <input class="" type="radio" value="email" formControlName="noti" (click)="changeNoti('email')"/> Email
+              <input class="" type="radio" value="sms" formControlName="noti" (click)="changeNoti('sms')"/> SMS
+          </div>
+          <hr/>
+          <button class="btn btn-dark" 
+                  type="button" 
+                  (click)="resetForm($event)">reset</button>&nbsp;
+          <button class="btn btn-dark">submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+
+FormModel ( employee )
+<hr/>
+<pre>
+  {{employeeForm.value|json}}
+</pre>
+
+
+<hr/>
+FormControl's state ( firstName )
+<hr/>
+<pre>
+  {{employeeForm.get('firstName').errors|json}}
+</pre>
+<hr/>
+<pre>
+
+    is pristine : {{employeeForm.get('firstName').pristine}}
+    is dirty    : {{employeeForm.get('firstName').dirty}}
+  
+    is invalid  : {{employeeForm.get('firstName').invalid}}
+    is valid    : {{employeeForm.get('firstName').valid}}
+  
+    is untouched: {{employeeForm.get('firstName').untouched}}
+    is touched  : {{employeeForm.get('firstName').touched}}
+  
+  </pre>
+
+
+<hr/>
+FormControl's state ( lastName )
+<pre>
+
+    is pristine : {{employeeForm.get('lastName').pristine}}
+    is dirty    : {{employeeForm.get('lastName').dirty}}
+  
+    is invalid  : {{employeeForm.get('lastName').invalid}}
+    is valid    : {{employeeForm.get('lastName').valid}}
+  
+    is untouched: {{employeeForm.get('lastName').untouched}}
+    is touched  : {{employeeForm.get('lastName').touched}}
+  
+  </pre>
+
+
+<hr/>
+FormGroup's state (employeeForm)
+<pre>
+
+    is pristine : {{employeeForm.pristine}}
+    is dirty    : {{employeeForm.dirty}}
+
+    is invalid  : {{employeeForm.invalid}}
+    is valid    : {{employeeForm.valid}}
+
+    is untouched: {{employeeForm.untouched}}
+    is touched  : {{employeeForm.touched}}
+
+
+</pre>
+<hr/>
