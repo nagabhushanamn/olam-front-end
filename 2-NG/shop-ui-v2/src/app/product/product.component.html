@@ -5,7 +5,7 @@
   <div class="col-9 col-sm-9 col-md-9"> 
     <h4>{{product.name|uppercase}} - <small>{{product.makeDate|date:'yyyy'}}</small> </h4>
     <h5>{{product.price|priceDiscount|currency:'INR':'symbol'}}</h5>
-    <button *ngIf="product.canBuy" class="btn btn-sm btn-primary">buy</button>
+    <button *ngIf="product.canBuy" class="btn btn-sm btn-primary" (click)="handleBuyBtnClick()">buy</button>
     <hr/>
 
     <ul class="nav nav-tabs">

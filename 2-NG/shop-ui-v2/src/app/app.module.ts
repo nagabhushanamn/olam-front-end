@@ -7,6 +7,7 @@ import { ProductComponent } from './product/product.component';
 import { ReviewComponent } from './review/review.component';
 import { ReviewFormComponent } from './review-form/review-form.component';
 import { PriceDiscountPipe } from './price-discount.pipe';
+import { ViewCartComponent } from './view-cart/view-cart.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { PriceDiscountPipe } from './price-discount.pipe';
     ProductComponent,
     ReviewComponent,
     ReviewFormComponent,
-    PriceDiscountPipe
+    PriceDiscountPipe,
+    ViewCartComponent
   ],
   imports: [
     BrowserModule,

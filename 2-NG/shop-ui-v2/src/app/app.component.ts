@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title: string = 'shopIT';
+  cart: Array<any> = []
   products: Array<any> = [
     {
       id: 111,
@@ -28,5 +29,9 @@ export class AppComponent {
       makeDate: Date.now()
     }
   ];
+
+  addToCart(item) {
+    this.cart.push(item)
+  }
 
 }

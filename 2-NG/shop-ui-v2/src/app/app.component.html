@@ -2,11 +2,16 @@
 
   <hr/>
   <h1 [innerText]="title"></h1>
+  <hr/> |
+  <i class="fa fa-shopping-cart" style="font-size: 50px;color: red"></i> -
+  <span class="badge badge-dark">{{cart.length}}</span> item(s) in cart |
+  <a href>View cart</a>
   <hr/>
-
+  <app-view-cart [cart]="cart"></app-view-cart>
+  <hr/>
   <div class="list-group">
     <div *ngFor="let p of products|slice:0:150" class="list-group-item">
-      <app-product [value]="p"></app-product>
+      <app-product [value]="p" (buy)="addToCart($event)"></app-product>
     </div>
   </div>
 

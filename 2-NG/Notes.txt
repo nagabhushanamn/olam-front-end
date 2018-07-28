@@ -73,14 +73,16 @@ NG -  Form Management
     
     using 
 
-    - Reactive-Form Module  ( most advanced  approach )
+    - Reactive-Forms Module  ( most advanced  approach )
 
   steps:
+     
      step-1: import 'ReactiveFormsModule' to your angular-module
      step-2: create form-group with form-controls in component's class
      step-3: bind form-group & form-controls to relevant form & fields  in template
 
      FormGroup :
+        
         ==> contains form's state & model
 
         form-states
