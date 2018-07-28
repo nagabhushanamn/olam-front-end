@@ -6,8 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  
   title: string = 'shopIT';
-  cart: Array<any> = []
+  isCartOpen: boolean = false;
+  cart: Array<any> = [];
   products: Array<any> = [
     {
       id: 111,
@@ -32,6 +35,11 @@ export class AppComponent {
 
   addToCart(item) {
     this.cart.push(item)
+  }
+
+  toggleCart(e) {
+    e.preventDefault();
+    this.isCartOpen = !this.isCartOpen;
   }
 
 }

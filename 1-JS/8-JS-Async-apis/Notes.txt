@@ -1,0 +1,28 @@
+
+
+
+--------------------------------------------------------------
+
+imp-note : on event, every even-handler always executes async
+
+--------------------------------------------------------------
+
+ui-module              service-module
+
+            async
+     --------------------->
+     <-----------------------
+
+
+
+     how to implement async communication b/w 2 js-modules
+
+     2 ways
+
+        -> using promise-api  ( es6 )
+        -> reactive extensions for java-script  ( RxJS )
+
+--------------------------------------------------------------
+
+
+--------------------------------------------------------------
