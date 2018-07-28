@@ -5,20 +5,19 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ProductService {
-
+  apiUrl: string = "http://localhost:3000/api/products";
   constructor(private http: HttpClient) { }
 
   loadProducts() {
-    let apiUrl = "http://localhost:8080/api/products";
-    let stream = this.http.get(apiUrl);
+    let stream = this.http.get(this.apiUrl);
     return stream;
   }
   loadReviews(productId) {
-    let apiUrl = `http://localhost:8080/api/products/${productId}/reviews`;
+    let apiUrl = `${this.apiUrl}/${productId}/reviews`;
     return this.http.get(apiUrl)
   }
   addNewReview(productId, newReview) {
-    let apiUrl = `http://localhost:8080/api/products/${productId}/reviews`;
+    let apiUrl = `${this.apiUrl}/${productId}/reviews`;
     return this.http.post(apiUrl, newReview)
   }
 

@@ -6,7 +6,6 @@
         <table class="table table-bordered table-sm">
           <thead>
             <tr>
-              <th>Id</th>
               <th>Name</th>
               <th>Price</th>
               <th>Qty</th>
@@ -15,7 +14,6 @@
           </thead>
           <tbody>
             <tr *ngFor="let line of cart">
-              <td>{{line.id}}</td>
               <td>{{line.name}}</td>
               <td>{{line.price|currency:'INR'}}</td>
               <td>1</td>
