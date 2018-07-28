@@ -1,0 +1,19 @@
+<div class="container">
+
+  <hr/>
+  <h1 [innerText]="title"></h1>
+  <hr/> |
+  <i class="fa fa-shopping-cart" style="font-size: 50px;color: red"></i> -
+  <span class="badge badge-dark">{{cart.length}}</span> item(s) in cart |
+  <a href (click)="toggleCart($event)">{{isCartOpen?'view products':'view cart'}}</a>
+  <hr/>
+  <app-view-cart [cart]="cart" *ngIf="isCartOpen"></app-view-cart>
+  <hr/>
+  <div class="alert alert-danger" *ngIf="errorMessage">{{errorMessage}}</div>
+  <div class="list-group" *ngIf="!isCartOpen">
+    <div *ngFor="let p of products|slice:0:150" class="list-group-item">
+      <app-product [value]="p" ></app-product>
+    </div>
+  </div>
+
+</div>
