@@ -13,5 +13,8 @@ export class ProductService {
   loadProducts() {
     return this.http.get(this.apiUrl);
   }
+  saveProduct(productData) {
+    return this.http.post(this.apiUrl, productData);
+  }
 
 }
