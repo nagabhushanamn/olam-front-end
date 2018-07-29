@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-12 col-sm-6 col-md-6">
+    <div class="card">
+      <div class="card-header">Product Form </div>
+      <div class="card-body">
+        <form [formGroup]="productForm" (submit)="handleFormSubmit($event)">
+          <div class="form-group">
+            <label>Name:</label>
+            <input class="form-control" autofocus formControlName="name" (blur)="validate('name')" />
+            <span class="text-danger">{{errorMessages.name}}</span>
+          </div>
+          <div class="form-group">
+            <label>Price:</label>
+            <input class="form-control" type="number" formControlName="price" (blur)="validate('price')" />
+            <span class="text-danger">{{errorMessages.price}}</span>
+          </div>
+          <div class="form-group">
+            <label>Make-date:</label>
+            <input class="form-control" formControlName="make_date" />
+          </div>
+          <div class="form-group">
+            <label>Description:</label>
+            <textarea class="form-control" formControlName="description"></textarea>
+          </div>
+          <button class="btn btn-dark">save</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<pre>
+  {{productForm.errors|json}}
+</pre>
