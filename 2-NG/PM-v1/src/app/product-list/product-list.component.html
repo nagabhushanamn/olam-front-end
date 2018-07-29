@@ -15,11 +15,11 @@
           </thead>
           <tbody>
             <tr *ngFor="let prod of products">
-              <td>{{prod.name}}</td>
+              <td><a [routerLink]="['/products/view',prod.id]">{{prod.name}}</a></td>
               <td>{{prod.price|currency:'INR'}}</td>
               <td>{{prod.make_date|date}}</td>
-              <td><a><i class="fa fa-edit"></i></a></td>
-              <td><a><i class="fa fa-trash"></i></a></td>
+              <td><a [routerLink]="['/products/edit',prod.id]"><i class="fa fa-edit"></i></a></td>
+              <td><a href="#" (click)="delete(prod.id,$event)"><i class="fa fa-trash"></i></a></td>
             </tr>
           </tbody>
         </table>
@@ -27,3 +27,6 @@
     </div>
   </div>
 </div>
+<br/>
+<hr/>
+<router-outlet></router-outlet>

@@ -6,11 +6,13 @@
         <form [formGroup]="productForm" (submit)="handleFormSubmit($event)">
           <div class="form-group">
             <label>Name:</label>
-            <input class="form-control" formControlName="name" />
+            <input class="form-control" autofocus formControlName="name" (blur)="validate('name')" />
+            <span class="text-danger">{{errorMessages.name}}</span>
           </div>
           <div class="form-group">
             <label>Price:</label>
-            <input class="form-control" type="number" formControlName="price" />
+            <input class="form-control" type="number" formControlName="price" (blur)="validate('price')" />
+            <span class="text-danger">{{errorMessages.price}}</span>
           </div>
           <div class="form-group">
             <label>Make-date:</label>
@@ -26,3 +28,6 @@
     </div>
   </div>
 </div>
+<pre>
+  {{productForm.errors|json}}
+</pre>

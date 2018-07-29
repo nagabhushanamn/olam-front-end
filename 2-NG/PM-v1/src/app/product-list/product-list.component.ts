@@ -18,5 +18,12 @@ export class ProductListComponent implements OnInit {
         this.products = products
       })
   }
+  delete(id, event) {
+    event.preventDefault();
+    this.productService.deleteProduct(id)
+      .subscribe(() => {
+        this.products = this.products.filter(item => item.id !== id)
+      });
+  }
 
 }

@@ -10,29 +10,53 @@ import { HomeComponent } from './home/home.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProductFormComponent } from './product-form/product-form.component';
+import { ProductViewComponent } from './product-view/product-view.component';
+// import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 //-----------------------------------------------------------------------------
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'all', component: ProductListComponent },
-  { path: 'new', component: ProductFormComponent },
+  {
+    path: 'products',
+    component: ProductListComponent,
+    children: [
+      {
+        path: 'view/:prodId',
+        component: ProductViewComponent
+      },
+      {
+        path: 'edit/:prodId',
+        component: ProductFormComponent
+      },
+    ]
+  },
+  { path: 'products/new', component: ProductFormComponent },
+
   { path: '**', component: NotFoundComponent }
 ];
 //-----------------------------------------------------------------------------
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ProductListComponent,
     NotFoundComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    ProductViewComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    // DateInputsModule,
+    // BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
