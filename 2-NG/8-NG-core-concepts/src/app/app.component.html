@@ -1,0 +1,39 @@
+
+
+<div class="container">
+	
+	<hr />
+	<h1>NG : core concepts</h1>
+	<hr/>
+	<app-cart-badge [cartStream]="cartStream"></app-cart-badge>
+	<hr/>
+	<app-status [cartStream]="cartStream"></app-status>
+	<hr/>
+	<button (click)="applyDiscount()">apply discounts </button>
+	<hr/>
+	<app-product [product]="product" [cartStream]="cartStream"></app-product>
+	<hr/>
+	<button class="btn btn-success" (click)="processWithinAngularZone()">
+	start progress1- <span class="badge badge-dark">{{progress1}}</span>
+	</button>
+	
+	
+	<button class="btn btn-danger" (click)="processOutsideAngularZone()">
+	start progress2- <span class="badge badge-dark">{{progress2}}</span>
+	</button>
+	
+
+
+	<hr />
+	<button class="btn btn-primary" (click)="changeMessage('good morning')">GM</button>
+	<button class="btn btn-primary" (click)="changeMessage('good noon')">GN</button>
+	<button class="btn btn-primary" (click)="changeMessage('good evening')">GE</button>
+	<button class="btn btn-danger" (click)="changeMessage('')">Remove</button>
+	<hr />
+
+	<app-greeting [message]="message" *ngIf="message">
+	</app-greeting>
+	
+	
+</div>
+

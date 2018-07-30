@@ -1,0 +1,24 @@
+.box1 {
+  border: 1px solid green;
+  margin: 100px;
+  padding: 50px;
+  font-family: monospace;
+  font-size: 30px;
+  background-color: #DEF;
+}
+.box2 {
+  border: 1px solid green;
+  margin: 100px;
+  padding: 50px;
+  font-family: monospace;
+  font-size: 30px;
+  background-color: #156bc0;
+}
+.box3 {
+  border: 1px solid green;
+  margin: 100px;
+  padding: 50px;
+  font-family: monospace;
+  font-size: 30px;
+  background-color: #38b4aa;
+}

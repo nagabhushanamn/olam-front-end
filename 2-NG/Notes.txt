@@ -101,3 +101,29 @@ NG -  Form Management
             - formGroup.value   
 
 ------------------------------------------------------------
+
+// to start with new keno-angular applications
+
+
+> ng new <project-name> --style=scss
+> cd <project-name>
+
+> npm i bootstrap --save
+   pdate global style file
+   @import "~bootstrap/scss/bootstrap";
+
+for browser in-memory web-api
+> npm i angular-in-memory-web-api --save-dev
+> ng g s InMemProductAPI
+    - define createDb method & return sample products
+
+install kendoUI
+> ng add @progress/kendo-angular-grid
+> npm install --save @progress/kendo-theme-default
+  update global style file
+    @import "~@progress/kendo-theme-default/scss/all";
+
+> ng g s Product
+    with loadProducts()
+
+> update app.component with kendo-grid component

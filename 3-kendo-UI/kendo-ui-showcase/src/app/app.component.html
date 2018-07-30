@@ -1,0 +1,51 @@
+<div class="container">
+
+    <hr>
+    <h1>Kendo UI</h1>
+    <hr/>
+
+    <kendo-grid [kendoGridBinding]="products" [pageable]="true" [pageSize]="10" [height]="490">
+        
+        <!-- <ng-template kendoGridToolbarTemplate>
+            <button kendoGridPDFCommand icon="file-pdf">Export to PDF</button>
+        </ng-template> -->
+        
+        <ng-template kendoGridToolbarTemplate>
+            <button type="button" kendoGridExcelCommand icon="file-excel">Export to Excel</button>
+        </ng-template>
+
+        <kendo-grid-column field="ProductID" title="ID" width="40">
+        </kendo-grid-column>
+        <kendo-grid-column field="ProductName" title="Name" width="250">
+        </kendo-grid-column>
+        <kendo-grid-column field="Category.CategoryName" title="Category">
+        </kendo-grid-column>
+        <kendo-grid-column field="UnitPrice" title="Price" width="80">
+        </kendo-grid-column>
+        <kendo-grid-column field="UnitsInStock" title="In stock" width="80">
+        </kendo-grid-column>
+        <kendo-grid-column field="Discontinued" title="Discontinued" width="120">
+            <ng-template kendoGridCellTemplate let-dataItem>
+                <input type="checkbox" [checked]="dataItem.Discontinued" disabled/>
+            </ng-template>
+        </kendo-grid-column>
+
+        <!-- <kendo-grid-pdf fileName="Products.pdf" [allPages]="true" paperSize="A4" [repeatHeaders]="true" [landscape]="true">
+            <kendo-grid-pdf-margin top="2cm" left="1cm" right="1cm" bottom="2cm"></kendo-grid-pdf-margin>
+            <ng-template kendoGridPDFTemplate let-pageNum="pageNum" let-totalPages="totalPages">
+                <div class="page-template">
+                    <div class="header">
+                        <div style="float: right">Page {{ pageNum }} of {{ totalPages }}</div>
+                        Olam products
+                    </div>
+                    <div class="footer">
+                        Page {{ pageNum }} of {{ totalPages }}
+                    </div>
+                </div>
+            </ng-template>
+        </kendo-grid-pdf> -->
+        
+        <kendo-grid-excel fileName="Products.xlsx"></kendo-grid-excel> 
+    </kendo-grid>
+
+</div>

@@ -1,0 +1,22 @@
+<div class="container">
+  <hr/>
+  <h1> PM </h1>
+  <hr/>
+
+
+  <kendo-grid [data]="products" [height]="210">
+    <ng-template kendoGridToolbarTemplate>
+      <button type="button" kendoGridExcelCommand icon="file-excel">Export to Excel</button>
+    </ng-template>
+    <kendo-grid-column field="id" title="ID" width="40">
+    </kendo-grid-column>
+    <kendo-grid-column field="name" title="Name" width="250">
+    </kendo-grid-column>
+    <kendo-grid-column field="price" title="Price">
+    </kendo-grid-column>
+    <kendo-grid-column field="qty" title="Quantity">
+    </kendo-grid-column>
+    <kendo-grid-excel fileName="Products.xlsx"></kendo-grid-excel>
+  </kendo-grid>
+
+</div>
