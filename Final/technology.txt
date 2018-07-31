@@ -1,0 +1,111 @@
+
+
+    database
+    -----------
+        => SQL-server / oracle   : SQL
+        => Redis                 : key-value in-memory db
+        => mongodb               : document based
+
+    back-end-appln
+    ---------------    
+        IDE
+                => eclipse | intellij idea
+        language(s):
+                => java 
+        unit-testing F.W
+                => junit
+        build-tools
+                => ANT,Maven,Gradle,SBT,Ivy....
+        F.W
+                => spring
+
+    ----------------------------------------
+
+    Layer(s)  ==> logical segmentation of application code
+    
+    ----------------------------------------------------- 
+    Web/Enterpise appln:
+    ----------------------------------------------------- 
+    0. infra-layer             ==> config details
+    1. data/repository layer   ==> data-accessing logic 
+    2. service/business layer  ==> business logic      
+    3. web-layer               ==> hhtp request & response logic ( with / without UI )
+    4. UI-layer                ==> rendering logic
+    -----------------------------------------------------  
+
+
+    Technology
+     ----------------------------------------------------- 
+    0. infra-layer             ==> config details
+        -> .properties or .yml
+    1. data/repository layer   ==> data-accessing logic 
+        -> jdbc or ORM f.w with JPA
+    2. service/business layer  ==> business logic      
+        -> your code + F.W support
+    3. web-layer               ==> http request & response logic ( with / without UI )
+         -> Spring Web 
+    4. UI-layer               ==> rendering logic
+    -----------------------------------------------------  
+
+    Front-End Application
+
+    IDE
+        => eclipse | VS-code
+    Web-Tech
+        => HTML, CSS
+    language 
+        => javascript
+    unit-testing F.W
+        => Jasmine,Karma,Protractor
+    build-tools 
+        => grunt,gulp, webpack
+    F.W 
+        => Angular | ReactJS
+
+    Third-party's NG components
+        ==> KndoUI
+
+    Node.js runtime
+        => NPM    
+
+
+    Layer(s)
+
+    1. UI-components-layer   ==> UI logic
+
+    2. service-layer         ==> shared data/Non-UI logic
+
+
+  -------------------------------------------------------------------------
+
+
+    Micro-services-arch : required tools
+    ------------------------------------
+
+    development:
+    --> spring-boot   : development-time spring auto-configuration
+
+    deployment
+
+    --> config-server   e.g spring cloud-config
+    --> service-discovery-server  e.g Eureka server
+    --> gateway                   e.g ZUUL, etc..
+    --> fail-over tools           e.g Hysterix 
+    --> monitoring tools           e.g nagios
+
+
+-------------------------------------------------------------------------    
+
+
+
+
+
+
+
+
+
+
+
+
+
+

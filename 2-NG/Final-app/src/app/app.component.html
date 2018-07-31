@@ -4,7 +4,7 @@
   <hr/>
 
 
-  <kendo-grid [data]="products" [height]="210">
+  <kendo-grid [data]="products" [pageable]="true" [pageSize]="5" [height]="410">
     <ng-template kendoGridToolbarTemplate>
       <button type="button" kendoGridExcelCommand icon="file-excel">Export to Excel</button>
     </ng-template>

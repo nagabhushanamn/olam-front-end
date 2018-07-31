@@ -1,0 +1,42 @@
+
+
+developer's automation testing   
+
+    - unit-testing
+    - integration-teasting
+
+   -----------------------------------------------------------------------------
+
+   how to mto unit & integration testing
+
+   steps
+
+        => Arrange
+        => Act
+        => Assert
+
+        ==> by writing test-caes & run them on test-runners 
+
+           how to write test-cases & run them ?
+
+           using 'unit-testing' F.Ws
+
+
+           for Java
+
+                => JUnit / TestNG
+
+            for Javascript      
+
+            Testing F.Ws
+            --------------
+                => jasmine
+                => Mocha
+                => Jest 
+                => ..........
+
+            Test runners
+
+                => Karma    
+                
+-----------------------------------------------------------------------------
